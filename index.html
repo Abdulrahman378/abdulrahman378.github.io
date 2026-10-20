@@ -1,0 +1,114 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Abdulrahman Elshenhabi</title>
+<meta name="description" content="Abdulrahman Elshenhabi — video creator, Qatar University. Selected work.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600&family=Figtree:wght@400;500&display=swap">
+<style>
+  /* Layout: light, centered, generous air. Portrait → name → one line → featured frame → two frames. Nothing else. */
+  :root {
+    --bg: #f8f8f6;
+    --surface: #ffffff;
+    --fg: #17171c;
+    --muted: #8b8b94;
+    --line: #e9e9e5;
+    --accent: #6c5ce7;
+    --display: "Outfit", "Avenir Next", "Helvetica Neue", Arial, sans-serif;
+    --body: "Figtree", "Avenir Next", "Helvetica Neue", Arial, sans-serif;
+    color-scheme: light;
+  }
+  * { box-sizing: border-box; }
+  html, body { margin: 0; }
+  body { background: var(--bg); color: var(--fg); font-family: var(--body); font-size: 17px; line-height: 1.6; -webkit-font-smoothing: antialiased; }
+  .wrap { max-width: 1040px; margin: 0 auto; padding-inline: 24px; padding-block: 96px 112px; display: flex; flex-direction: column; gap: 88px; }
+
+  .intro { display: flex; flex-direction: column; align-items: center; text-align: center; gap: 28px; }
+  .avatar { width: 176px; height: 176px; border-radius: 50%; object-fit: cover; display: block; border: 6px solid var(--surface); box-shadow: 0 1px 2px rgba(0,0,0,.05), 0 28px 48px -20px rgba(23,23,28,.25); }
+  .intro h1 { font-family: var(--display); font-weight: 500; font-size: clamp(2.2rem, 5.5vw, 3.4rem); line-height: 1.05; letter-spacing: -0.025em; margin: 0; text-wrap: balance; }
+  .role { margin: 10px 0 0; color: var(--muted); font-family: var(--display); font-weight: 400; font-size: 1.05rem; letter-spacing: .01em; }
+  .bio { margin: 0; max-width: 44ch; font-size: 1.1rem; color: #44444c; text-wrap: pretty; }
+
+  .work { display: flex; flex-direction: column; gap: 32px; }
+  .frame { position: relative; width: 100%; max-width: 100%; background: var(--surface); border-radius: 20px; overflow: hidden; box-shadow: 0 0 0 1px var(--line), 0 1px 2px rgba(0,0,0,.04), 0 32px 56px -28px rgba(23,23,28,.28); }
+  .frame.wide { aspect-ratio: 16 / 9; }
+  .frame.tall { aspect-ratio: 9 / 16; }
+  .frame iframe { position: absolute; inset: 0; width: 100%; height: 100%; border: 0; }
+  figure { margin: 0; display: flex; flex-direction: column; gap: 14px; min-width: 0; }
+  figcaption { display: flex; align-items: baseline; gap: 12px; padding-inline: 4px; font-family: var(--display); font-weight: 500; font-size: 1rem; letter-spacing: -0.005em; }
+  figcaption small { color: var(--muted); font-family: var(--body); font-weight: 400; font-size: .9rem; }
+  .duo { display: grid; grid-template-columns: 1fr 1fr; gap: 28px; }
+  .phone-wrap { align-items: center; padding-top: 16px; }
+  .phone {
+    position: relative; width: 300px; max-width: 100%;
+    padding: 12px; border-radius: 44px;
+    background: #17171c;
+    box-shadow: 0 0 0 1px rgba(0,0,0,.08), 0 2px 4px rgba(0,0,0,.06), 0 40px 70px -28px rgba(23,23,28,.45);
+    transition: transform .45s cubic-bezier(.2,.8,.2,1), box-shadow .45s cubic-bezier(.2,.8,.2,1);
+  }
+  .phone-wrap:hover .phone { transform: translateY(-6px) rotate(-1deg); box-shadow: 0 0 0 1px rgba(0,0,0,.08), 0 2px 4px rgba(0,0,0,.06), 0 56px 80px -30px rgba(23,23,28,.5); }
+  .phone .frame { border-radius: 32px; box-shadow: none; }
+  .phone-wrap:hover .frame { transform: none; box-shadow: none; }
+  .phone .notch { position: absolute; top: 22px; left: 50%; transform: translateX(-50%); width: 92px; height: 24px; border-radius: 999px; background: #17171c; z-index: 2; }
+  .phone .home { position: absolute; bottom: 20px; left: 50%; transform: translateX(-50%); width: 110px; height: 4px; border-radius: 999px; background: rgba(255,255,255,.75); z-index: 2; }
+
+  footer { display: flex; justify-content: center; gap: 8px; color: var(--muted); font-size: .9rem; }
+  footer a { color: var(--fg); text-decoration: none; }
+  footer a:hover, footer a:focus-visible { color: var(--accent); outline: none; }
+
+  @media (max-width: 680px) {
+    .wrap { gap: 64px; padding-block: 64px 56px; }
+    .avatar { width: 148px; height: 148px; }
+    .frame { border-radius: 16px; }
+    .duo { grid-template-columns: 1fr; gap: 28px; }
+    .phone { width: 270px; }
+  }
+
+  /* light touches */
+  .frame { transition: transform .45s cubic-bezier(.2,.8,.2,1), box-shadow .45s cubic-bezier(.2,.8,.2,1); will-change: transform; }
+  figure:hover .frame { transform: translateY(-6px) scale(1.008); box-shadow: 0 0 0 1px var(--line), 0 2px 4px rgba(0,0,0,.04), 0 48px 70px -30px rgba(23,23,28,.38); }
+  .avatar { transition: transform .5s cubic-bezier(.2,.8,.2,1), box-shadow .5s; }
+  .avatar:hover { transform: scale(1.04) rotate(-1.5deg); box-shadow: 0 1px 2px rgba(0,0,0,.05), 0 36px 56px -20px rgba(23,23,28,.32); }
+  .up { animation: up 1s cubic-bezier(.2,.8,.2,1) both; }
+  .intro > .up:nth-child(2) { animation-delay: .1s; }
+  .intro > .up:nth-child(3) { animation-delay: .2s; }
+  .work > .up:nth-child(1) { animation-delay: .35s; }
+  .work > .up:nth-child(2) { animation-delay: .5s; }
+  .work > .up:nth-child(3) { animation-delay: .65s; }
+  @keyframes up { from { opacity: 0; transform: translateY(16px); } to { opacity: 1; transform: none; } }
+  @media (prefers-reduced-motion: reduce) { .up { animation: none; } .frame, .avatar { transition: none; } }
+</style>
+</head>
+<body>
+<main class="wrap">
+  <header class="intro">
+    <img class="avatar up" src="avatar.jpg" alt="Abdulrahman Elshenhabi" width="176" height="176">
+    <div class="up">
+      <h1>Abdulrahman Elshenhabi</h1>
+      <p class="role">Qatar University</p>
+    </div>
+    <p class="bio up">Curious, quick to learn, and always chasing the next thing to make.</p>
+  </header>
+
+  <section class="work">
+    <figure class="up">
+      <div class="frame wide"><iframe src="https://www.youtube-nocookie.com/embed/hGJLz4qsUvw?rel=0&modestbranding=1" title="Featured video" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen loading="lazy"></iframe></div>
+    </figure>
+    <div class="duo up">
+      <figure><div class="frame wide"><iframe src="https://www.youtube-nocookie.com/embed/NOsqQPJnRDE?rel=0&modestbranding=1" title="Video" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen loading="lazy"></iframe></div></figure>
+      <figure><div class="frame wide"><iframe src="https://www.youtube-nocookie.com/embed/wpDRcJ4y4UQ?rel=0&modestbranding=1" title="Video" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen loading="lazy"></iframe></div></figure>
+    </div>
+    <figure class="phone-wrap up">
+      <div class="phone">
+        <span class="notch"></span>
+        <div class="frame tall"><iframe src="https://www.youtube-nocookie.com/embed/EKZEB_VVaSw?rel=0&modestbranding=1" title="Short" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen loading="lazy"></iframe></div>
+        <span class="home"></span>
+      </div>
+    </figure>
+  </section>
+</main>
+</body>
+</html>
