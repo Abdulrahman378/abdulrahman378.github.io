@@ -7,7 +7,7 @@
 <meta name="description" content="Abdulrahman Elshenhabi — video creator, Qatar University. Selected work.">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600&family=Figtree:wght@400;500&display=swap">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600&family=Figtree:wght@400;500&family=Instrument+Serif:ital@1&display=swap">
 <style>
   /* Layout: light, centered, generous air. Portrait → name → one line → featured frame → two frames. Nothing else. */
   :root {
@@ -81,9 +81,9 @@
   .work > .up:nth-child(3) { animation-delay: .65s; }
   @keyframes up { from { opacity: 0; transform: translateY(16px); } to { opacity: 1; transform: none; } }
   @media (prefers-reduced-motion: reduce) { .up { animation: none; } .frame, .avatar { transition: none; } }
-  .tags { margin: 0; padding: 0; list-style: none; display: flex; flex-wrap: wrap; justify-content: center; gap: 8px; max-width: 560px; }
-  .tags li { font-size: .9rem; color: var(--fg); background: var(--surface); border: 1px solid var(--line); padding: 7px 15px; border-radius: 999px; transition: transform .3s cubic-bezier(.2,.8,.2,1), border-color .3s; }
-  .tags li:hover { transform: translateY(-2px); border-color: var(--accent); }
+  .about { margin: 0; display: flex; flex-direction: column; gap: 2px; max-width: 46ch; }
+  .about p { margin: 0; font-size: 1rem; color: #6b6b74; }
+  .about b { font-weight: 500; color: var(--fg); }
 </style>
 </head>
 <body>
@@ -95,9 +95,11 @@
       <p class="role">Qatar University</p>
     </div>
     <p class="bio up">Curious, quick to learn, and always chasing the next thing to make.</p>
-    <ul class="tags up">
-      <li>Video Editing</li><li>Storytelling</li><li>Color Grading</li><li>Filming</li><li>Presenting</li>
-    </ul>
+    <div class="about up">
+      <p>I <b>film</b>, <b>cut</b>, and <b>color</b> until it feels right.</p>
+      <p>Sometimes I step in front of the camera and <b>present</b> it myself.</p>
+      <p>The tools change. The <b>story</b> is the point.</p>
+    </div>
   </header>
 
   <section class="work">
